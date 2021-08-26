@@ -60,8 +60,8 @@ struct MovieList: View {
         .onDelete(perform: deleteMovie)
       }
       .sheet(isPresented: $isPresented) {
-        AddMovie { title, genre, release in
-          self.addMovie(title: title, genre: genre, releaseDate: release)
+        AddMovie { title, genre, release, actor in
+          self.addMovie(title: title, genre: genre, releaseDate: release, actor: actor)
           self.isPresented = false
         }
       }
@@ -89,7 +89,7 @@ struct MovieList: View {
   }
 
 
-  func addMovie(title: String, genre: String, releaseDate: Date) {
+  func addMovie(title: String, genre: String, releaseDate: Date, actor: String) {
     // 1
     let newMovie = Movie(context: managedObjectContext)
     let newActor = Actor(context: managedObjectContext)
@@ -98,7 +98,8 @@ struct MovieList: View {
     newMovie.title = title
     newMovie.genre = genre
     newMovie.releaseDate = releaseDate
-    newActor.name = "fake actor"
+    // newActor.name = "fake actor"
+    newActor.name = actor
     newMovie.actor = newActor
     
 

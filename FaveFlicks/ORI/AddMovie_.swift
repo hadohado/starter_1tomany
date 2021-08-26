@@ -40,6 +40,7 @@ struct AddMovie_: View {
   @State var genre = ""
   @State var releaseDate = Date()
   let onComplete: (String, String, Date) -> Void
+  // let onComplete: (String, String, Date, String) -> Void
 
   var body: some View {
     NavigationView {

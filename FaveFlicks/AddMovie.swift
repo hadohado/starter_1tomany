@@ -46,6 +46,7 @@ struct AddMovie: View {
   @State var actor = ""
   
   // let onComplete: (String, String, Date) -> Void
+  let onComplete: (String, String, Date) -> Void
 
   var body: some View {
     NavigationView {
@@ -89,8 +90,8 @@ struct AddMovie: View {
     onComplete(
       title.isEmpty ? AddMovie.DefaultMovieTitle : title,
       genre.isEmpty ? AddMovie.DefaultMovieGenre : genre,
-      releaseDate,   // )
-    actor)
+      releaseDate )
+    // actor
   }
 }
 

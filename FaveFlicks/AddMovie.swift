@@ -41,9 +41,10 @@ struct AddMovie: View {
 
   @State var title = ""
   @State var genre = ""
-  // @State var releaseDate = Date()
+  @State var releaseDate = Date()
   
-  @State var actor = ""
+  // @State var actor = ""
+  
   let onComplete: (String, String, Date) -> Void
 
   var body: some View {

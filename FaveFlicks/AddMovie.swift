@@ -41,7 +41,7 @@ struct AddMovie: View {
 
   @State var title = ""
   @State var genre = ""
-  @State var releaseDate = Date()
+  // @State var releaseDate = Date()
   
   @State var actor = ""
   let onComplete: (String, String, Date) -> Void
@@ -55,9 +55,9 @@ struct AddMovie: View {
         Section(header: Text("Genre")) {
           TextField("Genre", text: $genre)
         }
-        Section(header: Text("Actor")) {
-          TextField("Actor", text: $actor)
-        }
+//        Section(header: Text("Actor")) {
+//          TextField("Actor", text: $actor)
+//        }
         
         Section {
           DatePicker(

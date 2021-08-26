@@ -58,7 +58,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
 
   func sceneDidEnterBackground(_ scene: UIScene) {
-    saveContext()
+    
+//    var applicationDocumentsDirectory: NSURL = {
+//      let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//      print("url = ", urls)
+//      return urls[urls.count-1] as NSURL
+//    }()
+//    saveContext()
+    
   }
 
   // MARK: - Core Data stack
@@ -71,6 +78,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         fatalError("Unresolved error \(error), \(error.userInfo)")
       }
     }
+    
+//    var applicationDocumentsDirectory: NSURL = {
+//      let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//      print("url = ", urls)
+//      return urls[urls.count-1] as NSURL
+//    }()
+    
+
     return container
   }()
 

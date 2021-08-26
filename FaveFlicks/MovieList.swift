@@ -92,11 +92,15 @@ struct MovieList: View {
   func addMovie(title: String, genre: String, releaseDate: Date) {
     // 1
     let newMovie = Movie(context: managedObjectContext)
-
+    let newActor = Actor(context: managedObjectContext)
+    
     // 2
     newMovie.title = title
     newMovie.genre = genre
     newMovie.releaseDate = releaseDate
+    newActor.name = "fake actor"
+    newMovie.actor = newActor
+    
 
     // 3
     saveContext()

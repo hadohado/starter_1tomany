@@ -45,6 +45,8 @@ struct MovieRow: View {
 
   var body: some View {
     VStack(alignment: .leading) {
+      movie.actor?.name.map(Text.init)
+      
       movie.title.map(Text.init)
         .font(.title)
       HStack {
@@ -53,6 +55,7 @@ struct MovieRow: View {
         Spacer()
         movie.releaseDate.map { Text(Self.releaseFormatter.string(from: $0)) }
           .font(.caption)
+        // movie.actor
       }
     }
   }

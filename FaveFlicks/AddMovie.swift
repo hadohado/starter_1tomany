@@ -43,9 +43,9 @@ struct AddMovie: View {
   @State var genre = ""
   @State var releaseDate = Date()
   
-  // @State var actor = ""
+  @State var actor = ""
   
-  let onComplete: (String, String, Date) -> Void
+  // let onComplete: (String, String, Date) -> Void
 
   var body: some View {
     NavigationView {
@@ -56,9 +56,9 @@ struct AddMovie: View {
         Section(header: Text("Genre")) {
           TextField("Genre", text: $genre)
         }
-//        Section(header: Text("Actor")) {
-//          TextField("Actor", text: $actor)
-//        }
+        Section(header: Text("Actor")) {
+          TextField("Actor", text: $actor)
+        }
         
         Section {
           DatePicker(
@@ -78,10 +78,19 @@ struct AddMovie: View {
   }
 
   private func addMoveAction() {
+    
+    var applicationDocumentsDirectory: NSURL = {
+      let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+      print("url = ", urls)
+      return urls[urls.count-1] as NSURL
+    }()
+    
+    
     onComplete(
       title.isEmpty ? AddMovie.DefaultMovieTitle : title,
       genre.isEmpty ? AddMovie.DefaultMovieGenre : genre,
-      releaseDate)
+      releaseDate,   // )
+    actor)
   }
 }
 

@@ -8,10 +8,10 @@
         <attribute name="genre" optional="YES" attributeType="String"/>
         <attribute name="releaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="actor" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Actor" inverseName="movie" inverseEntity="Actor"/>
+        <relationship name="actor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Actor" inverseName="movie" inverseEntity="Actor"/>
     </entity>
     <elements>
-        <element name="Movie" positionX="-63" positionY="-18" width="128" height="89"/>
         <element name="Actor" positionX="-54" positionY="18" width="128" height="59"/>
+        <element name="Movie" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>
